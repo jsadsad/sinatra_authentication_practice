@@ -7,4 +7,5 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "auh_demo"
   end
 
+
 end
