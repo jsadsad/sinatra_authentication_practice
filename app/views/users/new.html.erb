@@ -1,0 +1,18 @@
+<h1>Sign Up</h1>
+<p>It's free and always will be...</p>
+
+<%= "Must include Email and Password" if @user && @user.errors.any? %>
+
+
+<form action="/users" method="POST"">
+  <p>
+    <label for="email">Email:</label>
+    <input type="email" name="email">
+  </p>
+  <p>
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+  </p>
+  <input type="submit">
+
+</form>

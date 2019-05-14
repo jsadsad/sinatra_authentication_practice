@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
 
   def logged_in?
     # using double negation operator takes an object and converts from actual value and casts it as binary of true or false.
-    !!session[:email]
+    current_user
   end
 
   def logout!
@@ -26,4 +26,7 @@ class ApplicationController < Sinatra::Base
     session.clear
   end
 
+  def current_user
+    @current_user ||= User.find_by(:email => session[:email]) if session[:email]
+  end
 end
